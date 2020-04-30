@@ -11,10 +11,10 @@ class NavTab extends Component {
             borderRadius: "10px"
         },
         buttonEmp: {
-            width: "150px",
+            width: "70%",
         },
         buttonIss: {
-            width: "150px",
+            width: "70%",
             marginTop: "10px"
         }
     }

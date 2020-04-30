@@ -38,11 +38,8 @@ class employee extends Component {
         return (
             <div className="wrapper">
                 <div className="row">
-                    <Nav
-                      switchtabs={this.selectedTab}  
-                    />
-                    <div className="col-md-10">
-                        TEST
+                    <div className="col-md-12 text-center header-conainer">
+                        <h1 className="head-main">HR Issue +</h1>
                     </div>
                 </div>
                 {this.renderPage()}

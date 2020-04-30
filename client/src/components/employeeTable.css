@@ -1,6 +1,10 @@
 
 
-.table-employees{
-    margin-top:20px;
+.employee-container {
+    padding-top:30px;
+}
 
+
+.btn-update{
+    margin-left:10px;
 }

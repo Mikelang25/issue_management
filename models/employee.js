@@ -23,6 +23,24 @@ module.exports = function (sequelize, DataTypes) {
           len: [1]
         }
       },
+      title: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [1]
+        }
+      },
+      profilePhoto: {
+        type: DataTypes.STRING,
+        allowNull: true
+      },
+      salary: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [1]
+        }
+      },
       dob: {
         type: DataTypes.DATEONLY,
         allowNull: false

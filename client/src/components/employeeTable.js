@@ -1,24 +1,22 @@
 import React, { Component } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Table from 'react-bootstrap/Table';
+import EmployeeCard from './employeeCard'
 import API from "../utils/API"
 import "./employeeTable.css"
+import EmployeeModal from "./EmployeeModal"
+import EmployeeEditModal from "./EmployeeEditModal"
 
 
 class employeeTable extends Component {
 
     state = {
         employees: [],
-        upddatedData: []
-    }
-    componentDidMount() {
-        this.findEmployees()
+        modalShow: false,
+        modelEditShow:false
     }
 
-    filterUpdated = (newData, filterConfiguration) => {
-        this.setState({
-            upddatedData: newData
-        });
+    componentDidMount() {
+        this.findEmployees()
     }
 
     findEmployees = () => {
@@ -28,36 +26,75 @@ class employeeTable extends Component {
             }))
     }
 
+    showModal = () => {
+        console.log("this works")
+        this.setState({
+            modalShow: true
+        })
+    }
+
+    showEditModal = () => {
+        console.log("this works")
+        this.setState({
+            modalEditShow: true
+        })
+    }
+
+    hideModal = () => {
+        this.setState({
+            modalShow: false
+        })
+        this.findEmployees();
+    }
+
+    hideEditModal = () => {
+        this.setState({
+            modalEditShow: false
+        })
+        this.findEmployees();
+    }
+
+    renderModal() {
+        return (
+            <EmployeeModal show={this.state.modalShow} onHide={this.hideModal} />
+        );       
+    }
+
+    renderEditModal() {
+        return (
+            <EmployeeEditModal show={this.state.modalEditShow} onHide={this.hideEditModal} />
+        );       
+    }
+
+
     render() {
         return (
-            <div className="col-md-10 table-container text-center">
-                <Table className="table-employees" variant="dark" striped bordered hover size="md">
-                    <thead className="table-head">
-                        <tr className="table-headers">
-                                <th className="table-head" filterkey="firstname">First Name</th>
-                                <th className="table-head" filterkey="lastname">Last Name</th>
-                                <th className="table-head" filterkey="email">Email</th>
-                                <th className="table-head" filterkey="dob">DOB</th>
-                                <th className="table-head" filterkey="hiredate">Hire Date</th>
-                                <th className="table-head" filterkey="termdate">Term Date</th>
-                                <th className="table-head">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody className="table-bod">
+            <div className="col-md-12">
+                <div className="row">
+                    <div className="col-md-10 employee-container text-center">
                         {this.state.employees.map(employee => (
-                            <tr className = "table-records"id={employee.id}>
-                                <td>{employee.firstName}</td>
-                                <td>{employee.lastName}</td>
-                                <td>{employee.email}</td>
-                                <td>{employee.dob}</td>
-                                <td>{employee.hireDate}</td>
-                                <td>{employee.termDate}</td>
-                                <td><button value={employee.id}>Delete</button></td>
-                            </tr>
+                            <EmployeeCard
+                                id = {employee.id}
+                                key = {employee.id}
+                                fname={employee.firstName}
+                                lname={employee.lastName}
+                                email={employee.email}
+                                dob={employee.dob}
+                                hdate={employee.hireDate}
+                                tdate={employee.termDate}
+                                salary={employee.salary}
+                                title={employee.title}
+                                photo={employee.profilePhoto}
+                                unHide={this.showEditModal}
+                            />
                         ))}
-
-                    </tbody>
-                </Table>
+                    </div>
+                    <div className="col-md-2 text-center">
+                        <button className="btn-crt-emp" onClick={this.showModal}>Create Employee</button>
+                        {this.renderModal()}
+                        {this.renderEditModal()}
+                    </div>
+                </div>
             </div>
         );
     }
