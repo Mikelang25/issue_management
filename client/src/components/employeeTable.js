@@ -12,7 +12,17 @@ class employeeTable extends Component {
     state = {
         employees: [],
         modalShow: false,
-        modelEditShow:false
+        modelEditShow:false,
+        selectEmployee:"",
+        selectId:"",
+        selectFirstName: "",
+        selectLastName: "",
+        selectEmail: "",
+        selectTitle: "",
+        selectSalary: "",
+        selectDob: "",
+        selectHireDate: "",
+        selectPhotoName: ""
     }
 
     componentDidMount() {
@@ -40,6 +50,25 @@ class employeeTable extends Component {
         })
     }
 
+    selectEditEmployeeHandler = (event) => {
+        const select = parseInt(event.target.value)
+        const selectEmployee = this.state.employees.filter(employee => employee.id === select)
+        this.setState({
+            selectEmployee: event.target.value,
+            selectId:selectEmployee[0].id,
+            selectFirstName: selectEmployee[0].firstName,
+            selectLastName: selectEmployee[0].lastName, 
+            selectEmail: selectEmployee[0].email,
+            selectTitle: selectEmployee[0].title,
+            selectSalary: selectEmployee[0].salary,
+            selectDob: selectEmployee[0].dob,
+            selectHireDate: selectEmployee[0].hireDate,
+            selectPhotoName: selectEmployee[0].profilePhoto
+        });
+        console.log(selectEmployee)
+        this.showEditModal();
+    }
+
     hideModal = () => {
         this.setState({
             modalShow: false
@@ -56,13 +85,29 @@ class employeeTable extends Component {
 
     renderModal() {
         return (
-            <EmployeeModal show={this.state.modalShow} onHide={this.hideModal} />
+            <EmployeeModal 
+                show={this.state.modalShow} 
+                onHide={this.hideModal} 
+            />
         );       
     }
 
     renderEditModal() {
         return (
-            <EmployeeEditModal show={this.state.modalEditShow} onHide={this.hideEditModal} />
+            <EmployeeEditModal 
+                employee={this.state.selectEmployee} 
+                show={this.state.modalEditShow} 
+                onHide={this.hideEditModal} 
+                id={this.state.selectId}
+                firstName={this.state.selectFirstName}
+                lastName={this.state.selectLastName}
+                email={this.state.selectEmail}
+                title={this.state.selectTitle}
+                salary={this.state.selectSalary}
+                dob={this.state.selectDob}
+                hireDate={this.state.selectHireDate}
+                photo={this.state.selectPhotoName}
+            />
         );       
     }
 
@@ -72,7 +117,7 @@ class employeeTable extends Component {
             <div className="col-md-12">
                 <div className="row">
                     <div className="col-md-10 employee-container text-center">
-                        {this.state.employees.map(employee => (
+                        {this.state.employees.map(employee => (                            
                             <EmployeeCard
                                 id = {employee.id}
                                 key = {employee.id}
@@ -85,11 +130,11 @@ class employeeTable extends Component {
                                 salary={employee.salary}
                                 title={employee.title}
                                 photo={employee.profilePhoto}
-                                unHide={this.showEditModal}
+                                unHide={this.selectEditEmployeeHandler}
                             />
                         ))}
                     </div>
-                    <div className="col-md-2 text-center">
+                    <div className="col-md-2 text-left">
                         <button className="btn-crt-emp" onClick={this.showModal}>Create Employee</button>
                         {this.renderModal()}
                         {this.renderEditModal()}

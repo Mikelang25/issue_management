@@ -13,9 +13,9 @@ const styles = {
         backgroundColor:"white"
     },
     photo: {
-        width: "90%",
-        height:"80%",
-        margin:10
+        width: "100px",
+        height:"100px",
+        margin:20
     },
     button: {
         width: "20%",
@@ -43,7 +43,7 @@ const EmployeeCard = props => {
         <div style={styles.card}>
             <div className="row">
                 <div className="col-md-5 text-center">
-                    <img style={styles.photo} src={`https://issue-management-` + props.id + `.s3.amazonaws.com/` + props.photo}/>
+                    <img style={styles.photo} src={props.photo ? `https://issue-management-` + props.id + `.s3.amazonaws.com/` + props.photo : "./noimage.png"}/>
                 </div>
                 <div style={styles.infoContainer} className="col-md-7 text-left">
                     <span>Name: {props.fname} {props.lname}</span><br></br>

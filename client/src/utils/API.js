@@ -11,5 +11,8 @@ export default {
     },
     updateEmployee: function (employee) {
         return axios.put("/api/employee", employee);
+    },
+    uploadFile: function (file, employee) {
+        return axios.post("/uploadfile/" + employee, file);
     }
 };

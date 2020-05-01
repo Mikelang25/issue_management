@@ -18,7 +18,7 @@ module.exports = function (app) {
             aws2.create(newEmployee.id)
             setTimeout(function () {
                 aws2.uploadphoto(newEmployee.id)
-            }, 2000)
+            }, 1000)
             res.json(newEmployee)
         })
     })
@@ -26,17 +26,30 @@ module.exports = function (app) {
     //updates an employee record
     app.put('/api/employee', function (req, res) {
         db.Employee.update({
-            emp_fname: req.body.emp_fname,
-            emp_lname: req.body.emp_lname,
-            emp_email: req.body.emp_email,
-            emp_pay: req.body.emp_pay,
-            emp_hire_date: req.body.emp_hire_date,
-            emp_photo: req.body.emp_photo
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            title: req.body.title,
+            profilePhoto: req.body.profilePhoto,
+            salary: req.body.salary,
+            dob:req.body.dob,
+            hireDate:req.body.hireDate
         }, {
             where: { id: req.body.id }
-        }).then(function (dbExample) {
-            res.json(dbExample)
+        }).then(function (updatedEmployee) {
+            res.json(updatedEmployee)
         })
     })
+
+    app.post('/uploadfile/:employee', function (req, res) {
+        if (!req.files || Object.keys(req.files).length === 0) {
+            return res.status(400).send('No files were uploaded.');
+        }
+
+        let sampleFile = req.files.file;
+        let selectEmployee = req.params.employee
+        aws2.upload(sampleFile, selectEmployee)
+
+    });
 
 };

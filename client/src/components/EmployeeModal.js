@@ -26,11 +26,10 @@ class employeeModal extends Component {
         });
     };
 
+
     addEmployeeHandler = (info) => {
         info.preventDefault();
-
-
-
+        
         //creates new employee object from state items 
         let newEmployee = {
             firstName: this.state.firstName,
@@ -39,8 +38,7 @@ class employeeModal extends Component {
             title: this.state.title,
             salary: this.state.salary,
             dob: this.state.dob,
-            hireDate: this.state.hireDate,
-            profilePhoto:"noimage.png"
+            hireDate: this.state.hireDate
         }
 
         // forms request to create new employee 
