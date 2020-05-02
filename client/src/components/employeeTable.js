@@ -5,6 +5,7 @@ import API from "../utils/API"
 import "./employeeTable.css"
 import EmployeeModal from "./EmployeeModal"
 import EmployeeEditModal from "./EmployeeEditModal"
+import EmployeeStats from "./EmployeeStats"
 
 
 class employeeTable extends Component {
@@ -34,6 +35,18 @@ class employeeTable extends Component {
             .then(res => this.setState({
                 employees: res.data
             }))
+    }
+
+    deleteEmployee = (event) => {
+        const employeeDelete = event.target.value
+        API.deleteEmployee(employeeDelete)
+            .then(res => {
+                const updEmployees = this.state.employees.filter(employee => employee.id != employeeDelete)
+                this.setState({
+                    employees:updEmployees
+                })
+                console.log("Employee sucessfully deleted")
+            })
     }
 
     showModal = () => {
@@ -80,7 +93,6 @@ class employeeTable extends Component {
         this.setState({
             modalEditShow: false
         })
-        this.findEmployees();
     }
 
     renderModal() {
@@ -131,11 +143,15 @@ class employeeTable extends Component {
                                 title={employee.title}
                                 photo={employee.profilePhoto}
                                 unHide={this.selectEditEmployeeHandler}
+                                delete={this.deleteEmployee}
                             />
                         ))}
                     </div>
-                    <div className="col-md-2 text-left">
+                    <div className="col-md-2 text-center">
                         <button className="btn-crt-emp" onClick={this.showModal}>Create Employee</button>
+                        <EmployeeStats 
+                            employees={this.state.employees}
+                        />
                         {this.renderModal()}
                         {this.renderEditModal()}
                     </div>

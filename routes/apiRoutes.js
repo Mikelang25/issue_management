@@ -41,6 +41,7 @@ module.exports = function (app) {
         })
     })
 
+    // uploads file to specified employee bucket
     app.post('/uploadfile/:employee', function (req, res) {
         if (!req.files || Object.keys(req.files).length === 0) {
             return res.status(400).send('No files were uploaded.');
@@ -51,5 +52,12 @@ module.exports = function (app) {
         aws2.upload(sampleFile, selectEmployee)
 
     });
+
+    //deletes a specified employee
+    app.delete('/api/employee/:id', function (req, res) {
+        db.Employee.destroy({ where: { id: req.params.id } }).then(function (employeeInfo) {
+            res.json(employeeInfo)
+        })
+    })
 
 };

@@ -14,5 +14,8 @@ export default {
     },
     uploadFile: function (file, employee) {
         return axios.post("/uploadfile/" + employee, file);
+    },
+    deleteEmployee: function(employee){
+      return axios.delete("/api/employee/" + employee)
     }
 };

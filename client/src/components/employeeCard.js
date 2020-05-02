@@ -10,10 +10,11 @@ const styles = {
         marginRight: "15px",
         position: "relative",
         borderRadius:"10px",
-        backgroundColor:"white"
+        backgroundColor:"white",
+        objectFit: "contain"
     },
     photo: {
-        width: "100px",
+        width: "110px",
         height:"100px",
         margin:20
     },
@@ -56,7 +57,7 @@ const EmployeeCard = props => {
             <div style={styles.buttonContainer}>
                 <button style={styles.button} value = {props.id}>Issues</button>
                 <button style={styles.button} value = {props.id} onClick={props.unHide}>Edit</button>
-                <button style={styles.button} value = {props.id} >Delete</button>
+                <button style={styles.button} value = {props.id} onClick={props.delete}>Delete</button>
             </div>
         </div>
     );
