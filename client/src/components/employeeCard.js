@@ -7,6 +7,7 @@ const styles = {
         border: "1pt solid black",
         display: "inline-block",
         marginTop:"15px",
+        marginLeft:"15px",
         marginRight: "15px",
         position: "relative",
         borderRadius:"10px",
@@ -39,12 +40,11 @@ const styles = {
 
 const EmployeeCard = props => {
 
-
     return (
         <div style={styles.card}>
             <div className="row">
                 <div className="col-md-5 text-center">
-                    <img style={styles.photo} src={props.photo ? `https://issue-management-` + props.id + `.s3.amazonaws.com/` + props.photo : "./noimage.png"}/>
+                    <img alt="" style={styles.photo} src={props.photo ? `https://issue-management-` + props.id + `.s3.amazonaws.com/` + props.photo : "./noimage.png"}/>
                 </div>
                 <div style={styles.infoContainer} className="col-md-7 text-left">
                     <span>Name: {props.fname} {props.lname}</span><br></br>
@@ -55,7 +55,6 @@ const EmployeeCard = props => {
                 </div>
             </div>
             <div style={styles.buttonContainer}>
-                <button style={styles.button} value = {props.id}>Issues</button>
                 <button style={styles.button} value = {props.id} onClick={props.unHide}>Edit</button>
                 <button style={styles.button} value = {props.id} onClick={props.delete}>Delete</button>
             </div>

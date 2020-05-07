@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import Nav from "../navBar"
 import "./employee.css"
 import EmployeeTable from "../employeeTable"
+import PageHeader from "../PageHeader"
 
 class employee extends Component {
 
     state = {
-        tab:"employee"
+        tab: "employee"
     }
 
     selectedTab = myTab => {
@@ -16,33 +17,32 @@ class employee extends Component {
         });
     }
 
-    renderPage(){
-        if (this.state.tab === "employee") {
-            return (
-                <div className="row">
-                    <div className="col-md-1"></div>
-                    <EmployeeTable/>
-                    <div className="col-md-1"></div>
-                </div>
-            );
-        } else if (this.state.tab === "issue") {
-            return (
-                <div className="row">
-                    TEST3
-                </div>
-            );
-        }
+    renderHeader () {
+        return(
+            <div className="row">
+                <PageHeader/>
+            </div>
+        );
+    }
+
+    renderNavBar () {
+        return (
+        <div className="row">
+            <Nav/>
+        </div>
+        );
     }
 
     render() {
         return (
             <div className="wrapper">
+                {this.renderHeader()}
+                {this.renderNavBar()}
                 <div className="row">
-                    <div className="col-md-12 text-center header-conainer">
-                        <h1 className="head-main">HR Issue +</h1>
-                    </div>
+                    <div className="col-md-1"></div>
+                        <EmployeeTable />
+                    <div className="col-md-1"></div>
                 </div>
-                {this.renderPage()}
             </div>
         );
     }

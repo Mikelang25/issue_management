@@ -51,21 +51,20 @@ class employeeEditModal extends Component {
         if (event.target.files[0]) {
             console.log("getting to photo handler")
             this.setState({
-                photo:event.target.files[0],
+                photo: event.target.files[0],
                 photoName: event.target.files[0].name
             })
             console.log(event.target.files[0])
             console.log(event.target.files[0].name)
         }
-
     }
 
     updateEmployeeHandler = (info) => {
 
         info.preventDefault();
-        
+
         //need check to see if a new profile picture was selected
-        if (this.state.photo) {
+        if (this.state.photo != "") {
             const data = new FormData();
             const employee = this.state.id;
             console.log(employee)
@@ -109,7 +108,7 @@ class employeeEditModal extends Component {
             >
                 <Modal.Header style={styles.modalHead}>
                     <Modal.Title id="contained-modal-title-vcenter">
-                        <h2 style={styles.modalTitle}><img src="https://img.icons8.com/color/48/000000/men-age-group-5.png" />Update Employee</h2>
+                        <h2 style={styles.modalTitle}><img alt="" src="https://img.icons8.com/color/48/000000/men-age-group-5.png" />Update Employee</h2>
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body style={styles.modal}>

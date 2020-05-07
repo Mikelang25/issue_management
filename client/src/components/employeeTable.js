@@ -128,11 +128,11 @@ class employeeTable extends Component {
         return (
             <div className="col-md-12">
                 <div className="row">
-                    <div className="col-md-10 employee-container text-center">
+                    <div className="col-md-9 employee-container text-left">
                         {this.state.employees.map(employee => (                            
                             <EmployeeCard
-                                id = {employee.id}
-                                key = {employee.id}
+                                id={employee.id}
+                                key={employee.id}
                                 fname={employee.firstName}
                                 lname={employee.lastName}
                                 email={employee.email}
@@ -147,7 +147,7 @@ class employeeTable extends Component {
                             />
                         ))}
                     </div>
-                    <div className="col-md-2 text-center">
+                    <div className="col-md-3 text-center">
                         <button className="btn-crt-emp" onClick={this.showModal}>Create Employee</button>
                         <EmployeeStats 
                             employees={this.state.employees}

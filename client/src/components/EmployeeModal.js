@@ -71,7 +71,7 @@ class employeeModal extends Component {
             >
                 <Modal.Header style={styles.modalHead}>
                     <Modal.Title id="contained-modal-title-vcenter">
-                        <h2 style={styles.modalTitle}><img src="https://img.icons8.com/color/48/000000/men-age-group-5.png" />Create Employee</h2>
+                        <h2 style={styles.modalTitle}><img alt="" src="https://img.icons8.com/color/48/000000/men-age-group-5.png" />Create Employee</h2>
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body style={styles.modal}>

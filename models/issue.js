@@ -5,6 +5,10 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: false,
         defaultValue: "admin"
       },
+      created_date: {
+        type: DataTypes.DATEONLY,
+        allowNull: false
+      },
       issueTitle: {
         type: DataTypes.STRING,
         allowNull: false,

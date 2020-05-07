@@ -1,0 +1,29 @@
+
+.main-container{
+    padding-left:50px;
+    padding-top:30px;
+}
+
+.table-headers{
+    text-align: center;
+}
+
+.table-date{
+    text-align: center;
+}
+
+.button-container{
+    text-align: center;
+}
+
+.btn-crt-iss{
+    margin-top:30px;
+}
+
+.fa{
+    pointer-events: none;
+}
+
+.emp-dropdown{
+    margin-bottom:30px;
+}

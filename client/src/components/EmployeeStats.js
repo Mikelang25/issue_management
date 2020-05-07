@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import API from '../utils/API'
-
-
 
 class EmployeeStats extends Component {
 
@@ -22,29 +19,24 @@ class EmployeeStats extends Component {
 
         let totalDays = 0;
         for (var e = 0; e < this.props.employees.length; e++) {
-            // Here are the two dates to compare
+
             let date1 = this.props.employees[e].hireDate
             let date2 = '2018-01-01';
 
-            // First we split the values to arrays date1[0] is the year, [1] the month and [2] the day
             date1 = date1.split('-');
             date2 = date2.split('-');
-
-            // Now we convert the array to a Date object, which has several helpful methods
             date1 = new Date(date1[0], date1[1], date1[2]);
             date2 = new Date(date2[0], date2[1], date2[2]);
 
-            // We use the getTime() method and get the unixtime (in milliseconds, but we want seconds, therefore we divide it through 1000)
+
             let date1_unixtime = parseInt(date1.getTime() / 1000);
             let date2_unixtime = parseInt(date2.getTime() / 1000);
 
-            // This is the calculated difference in seconds
+
             let timeDifference = date2_unixtime - date1_unixtime;
 
-            // in Hours
             let timeDifferenceInHours = timeDifference / 60 / 60;
 
-            // and finaly, in days :)
             let timeDifferenceInDays = timeDifferenceInHours / 24;
 
             totalDays = totalDays + timeDifferenceInDays
@@ -101,7 +93,8 @@ class EmployeeStats extends Component {
 const styles = {
     statsContainer: {
         border: "1pt solid black",
-        marginTop: 25
+        marginTop: 25,
+        padding:15
     },
     statsHeader:{
         marginTop:15

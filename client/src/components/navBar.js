@@ -1,36 +1,39 @@
 import React, { Component } from "react";
-
+import './navBar.css'
 
 class NavTab extends Component {
 
-    styles = {
-        buttonContainer: {
-            margin: "10px",
-            padding: "10px",
-            border: "1pt solid black",
-            borderRadius: "10px"
-        },
-        buttonEmp: {
-            width: "70%",
-        },
-        buttonIss: {
-            width: "70%",
-            marginTop: "10px"
-        }
+    signOutHandler = () => {
+        localStorage.removeItem('authToken')
+        window.location.replace("/")
     }
 
     render() {
         return (
-            <div className="col-md-2 text-center">
-                <div style={this.styles.buttonContainer}>
-                    <button style={this.styles.buttonEmp} value="employee" onClick={this.props.switchtabs}>Employees</button><br></br>
-                    <button style={this.styles.buttonIss} value="issue" onClick={this.props.switchtabs}>Issues</button>
+            <div className="col-md-12 link-container">
+                <div  className="row">
+                    <div className="col-md-1 text-center">
+                        <a className="links" href="/Employees">Employees</a>
+                    </div>
+                    <div className="col-md-1 text-center">
+                        <a className="links" href="/Issues">Issues</a>
+                    </div>
+                    <div className="col-md-1 text-center">
+                        <a className="links" href="">Accounting</a>
+                    </div>
+                    <div className="col-md-9 text-right">
+                         <button style={styles.buttonSignout} onClick={this.signOutHandler}>Sign Out</button>
+                    </div>
                 </div>
             </div>
         );
     }
+}
 
-
+const styles = {
+    buttonSignout:{
+        marginRight:"10px"
+    }
 }
 
 export default NavTab;

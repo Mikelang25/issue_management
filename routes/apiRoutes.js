@@ -32,8 +32,8 @@ module.exports = function (app) {
             title: req.body.title,
             profilePhoto: req.body.profilePhoto,
             salary: req.body.salary,
-            dob:req.body.dob,
-            hireDate:req.body.hireDate
+            dob: req.body.dob,
+            hireDate: req.body.hireDate
         }, {
             where: { id: req.body.id }
         }).then(function (updatedEmployee) {
@@ -59,5 +59,67 @@ module.exports = function (app) {
             res.json(employeeInfo)
         })
     })
+
+    //finds all users 
+    app.get('/api/find/issues', function (req, res) {
+        db.Issue.findAll({}).then(function (respTasks) {
+            res.json(respTasks)
+        })
+    })
+
+    //creates new issue
+    app.post('/api/issue', function (req, res) {
+        db.Issue.create(req.body).then(function (newIssue) {
+            res.json(newIssue)
+        })
+    })
+
+    //deletes a selected employee issue
+    app.delete('/api/issue/deleteall/:id/:employee', function (req, res) {
+        db.Issue.findOne({
+            where: {
+                id: req.params.id
+            }
+        }).then(function (issue) {
+            db.Issue.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
+                res.json(dbExample)
+            })
+            aws2.delete(issue.issue_attach, req.params.employee)
+        })
+    })
+
+    
+    app.post("/api/login", function (req, res) {
+        db.User.findOne({
+            where:{
+                email:req.body.email,
+                password:req.body.password
+            }
+        }).then(function(user) {
+            res.json(user)
+        })
+    });
+
+    // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
+    // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
+    // otherwise send back an error
+    app.post("/api/signup", function (req, res) {
+        db.User.create({
+            email: req.body.email,
+            password: req.body.password
+        })
+            .then(function () {
+                res.redirect(307, "/api/login");
+            })
+            .catch(function (err) {
+                res.status(401).json(err);
+            });
+    });
+
+    // Route for logging user out
+    app.get("/logout", function (req, res) {
+        req.logout();
+        res.redirect("/");
+    });
 
 };
