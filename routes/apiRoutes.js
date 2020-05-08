@@ -1,5 +1,5 @@
 const db = require('../models')
-const aws2 = require("../aws")
+const aws2 = require("../AWS")
 const nodemailer = require("nodemailer");
 
 
