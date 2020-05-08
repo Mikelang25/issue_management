@@ -48,7 +48,7 @@ module.exports = {
                 console.log("File deleted successfully");
             }
             else {
-                console.log("Check if you have sufficient permissions : " + err);
+                console.log("Check if you have sufficient permissions! : " + err);
             }
         });
     },
