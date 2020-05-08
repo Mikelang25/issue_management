@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect, HashRouter} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
 import Employee from "./components/pages/employee"
 import Issues from "./components/pages/issues"
 import Login from "./components/pages/login"
@@ -20,7 +20,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 
 function App() {
   return (
-    <HashRouter>
+    <Router>
       <div>
         <Switch>
           <Route exact path="/" component={Login} />
@@ -28,7 +28,7 @@ function App() {
           <PrivateRoute exact path="/Issues" component={Issues} />
         </Switch>
       </div>
-    </HashRouter>
+    </Router>
   );
 }
 
