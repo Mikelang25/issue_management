@@ -12,6 +12,10 @@ app.use(bodyParse.json());
 
 app.use(express.static('public'))
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
 require('./routes/apiRoutes.js')(app)
 
 
