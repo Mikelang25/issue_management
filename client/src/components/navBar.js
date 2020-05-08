@@ -13,10 +13,10 @@ class NavTab extends Component {
             <div className="col-md-12 link-container">
                 <div  className="row">
                     <div className="col-md-1 text-center">
-                        <a className="links" href="/Employees">Employees</a>
+                        <a className="links" href="/#/Employees">Employees</a>
                     </div>
                     <div className="col-md-1 text-center">
-                        <a className="links" href="/Issues">Issues</a>
+                        <a className="links" href="/#/Issues">Issues</a>
                     </div>
                     <div className="col-md-1 text-center">
                         <a className="links" href="">Accounting</a>
