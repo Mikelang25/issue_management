@@ -94,7 +94,8 @@ const styles = {
     statsContainer: {
         border: "1pt solid black",
         marginTop: 25,
-        padding:15
+        padding:15,
+        borderRadius:10
     },
     statsHeader:{
         marginTop:15

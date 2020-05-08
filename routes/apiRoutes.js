@@ -1,5 +1,6 @@
 const db = require('../models')
 const aws2 = require("../aws")
+const nodemailer = require("nodemailer");
 
 
 module.exports = function (app) {
@@ -70,6 +71,44 @@ module.exports = function (app) {
     //creates new issue
     app.post('/api/issue', function (req, res) {
         db.Issue.create(req.body).then(function (newIssue) {
+            // locates employee info based on EmployeeId of the new issue
+            db.Employee.findOne({
+                where: {
+                    id: newIssue.EmployeeId
+                }
+            }).then(function (employee) {
+
+                console.log(employee.email)
+
+                const transporter = nodemailer.createTransport({
+                    host: 'smtp.ethereal.email',
+                    port: 587,
+                    auth: {
+                        user: 'dax.schneider54@ethereal.email',
+                        pass: 'hnuqB5Cqg4JRcFvQeC'
+                    },
+                    tls: {
+                        // do not fail on invalid certs
+                        rejectUnauthorized: false
+                    }
+                });
+
+                var mailOptions = {
+                    from: 'dax.schneider54@ethereal.email',
+                    to: employee.email,
+                    subject: "An Issue has been created for you",
+                    text: "Issue Description: ",
+                    html: "<p>This is to let you know that an issue has been raised regarding your conduct."
+                };
+
+                transporter.sendMail(mailOptions, function (error, info) {
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        console.log('Email sent: ' + info.response);
+                    }
+                })
+            })
             res.json(newIssue)
         })
     })
@@ -84,18 +123,18 @@ module.exports = function (app) {
             db.Issue.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
                 res.json(dbExample)
             })
-            aws2.delete(issue.issue_attach, req.params.employee)
+            aws2.delete(issue.supportingDoc, req.params.employee)
         })
     })
 
-    
+
     app.post("/api/login", function (req, res) {
         db.User.findOne({
-            where:{
-                email:req.body.email,
-                password:req.body.password
+            where: {
+                email: req.body.email,
+                password: req.body.password
             }
-        }).then(function(user) {
+        }).then(function (user) {
             res.json(user)
         })
     });

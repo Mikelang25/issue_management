@@ -4,6 +4,7 @@ import './issueTable.css'
 import Table from 'react-bootstrap/Table';
 import IssueModal from './issueModal'
 import EmployeeDropItem from './employeeDropDown'
+import IssueStats from './IssueStats'
 
 class IssueTable extends Component {
 
@@ -119,8 +120,7 @@ class IssueTable extends Component {
                 let responseID = parseInt(res.data.EmployeeId)
                 let myEmployee = parseInt(this.state.employeeIssues)
                 console.log("responseID: " + responseID)
-
-
+                
                 let updateIssues = this.state.issues
                 updateIssues.push(res.data)
                 this.setState({
@@ -222,7 +222,6 @@ class IssueTable extends Component {
                                         <th>Incident Date</th>
                                         <th>Description</th>
                                         <th>Supporting Document</th>
-                                        <th>Confirm Date</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -234,7 +233,6 @@ class IssueTable extends Component {
                                             <td className="table-date">{issue.incidentDate}</td>
                                             <td>{issue.issueDescr}</td>
                                             <td className="table-date"><a href={`https://issue-management-`+ issue.EmployeeId + `.s3.amazonaws.com/` + issue.supportingDoc} download>{issue.supportingDoc}</a></td>
-                                            <td className="table-date">{issue.confirmDate}</td>
                                             <td className="button-container"><button className="btn-delete" value={issue.id} onClick={this.removeIssueHandler}><i className="fa fa-trash"></i></button></td>
                                         </tr>
                                     ))}
@@ -250,6 +248,10 @@ class IssueTable extends Component {
                     </div>
                     <div className="col-md-3 text-center">
                         <button className="btn-crt-iss" onClick={this.showModal}>Create Issue</button>
+                        <IssueStats
+                            employees = {this.state.employees}
+                            issues = {this.state.issues}
+                        />
                         {this.renderModal()}
                     </div>
                 </div>
