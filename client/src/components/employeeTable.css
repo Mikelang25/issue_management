@@ -1,4 +1,8 @@
 
+body{
+    background-image: URL("/bedge_grunge.png");
+}
+
 
 .employee-container {
     padding-top:30px;
@@ -7,4 +11,17 @@
 
 .btn-update{
     margin-left:10px;
+}
+
+.btn-crt-emp{
+    border-radius: 5px;
+    outline:none !important;
+}
+
+.btn-crt-emp:hover{
+    background-color: black;
+}
+
+.img-new-emp{
+    pointer-events: none;
 }

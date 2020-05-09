@@ -214,7 +214,7 @@ class IssueTable extends Component {
                             </select>
                         </div>
                         {this.state.employeeIssues.length ? (
-                            <Table striped bordered hover className="issue-table">
+                            <Table striped bordered hover className="issue-table" variant="dark">
                                 <thead>
                                     <tr className="table-headers">
                                         <th>Title</th>
@@ -232,7 +232,7 @@ class IssueTable extends Component {
                                             <td className="table-date">{issue.created_date}</td>
                                             <td className="table-date">{issue.incidentDate}</td>
                                             <td>{issue.issueDescr}</td>
-                                            <td className="table-date"><a href={`https://issue-management-`+ issue.EmployeeId + `.s3.amazonaws.com/` + issue.supportingDoc} download>{issue.supportingDoc}</a></td>
+                                            <td className="table-date"><a className="support-doc" href={`https://issue-management-`+ issue.EmployeeId + `.s3.amazonaws.com/` + issue.supportingDoc} download>{issue.supportingDoc}</a></td>
                                             <td className="button-container"><button className="btn-delete" value={issue.id} onClick={this.removeIssueHandler}><i className="fa fa-trash"></i></button></td>
                                         </tr>
                                     ))}
@@ -247,7 +247,7 @@ class IssueTable extends Component {
                             )}
                     </div>
                     <div className="col-md-3 text-center">
-                        <button className="btn-crt-iss" onClick={this.showModal}>Create Issue</button>
+                        <button className="btn-crt-iss" onClick={this.showModal}><img className="img-issue" src="https://img.icons8.com/plasticine/50/000000/file.png"/></button>
                         <IssueStats
                             employees = {this.state.employees}
                             issues = {this.state.issues}

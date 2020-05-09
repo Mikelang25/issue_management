@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect, HashRouter} from "rea
 import Employee from "./components/pages/employee"
 import Issues from "./components/pages/issues"
 import Login from "./components/pages/login"
+import Accounting from "./components/pages/accounting"
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/" component={Login} />
           <PrivateRoute exact path="/Employees" component={Employee} />
           <PrivateRoute exact path="/Issues" component={Issues} />
+          <PrivateRoute exact path="/Accounting" component={Accounting} />
         </Switch>
       </div>
     </HashRouter>

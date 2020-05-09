@@ -1,3 +1,6 @@
+body{
+    background-image: URL("/bedge_grunge.png");
+}
 
 .main-container{
     padding-left:50px;
@@ -16,9 +19,17 @@
     text-align: center;
 }
 
+
 .btn-crt-iss{
-    margin-top:30px;
+    margin-top:20px;
+    border-radius: 5px;
+    outline:none !important;
 }
+
+.btn-crt-iss:hover{
+    background-color: black;
+}
+
 
 .fa{
     pointer-events: none;
@@ -26,4 +37,20 @@
 
 .emp-dropdown{
     margin-bottom:30px;
+    text-indent: 10px;
+}
+
+.btn-delete{
+    background-color: red;
+    border-radius: 5px;
+    border:none;
+}
+
+.support-doc{
+    text-decoration: none!important;
+    color:white;
+}
+
+.support-doc:hover{
+    color:black;
 }

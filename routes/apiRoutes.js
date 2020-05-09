@@ -18,9 +18,6 @@ module.exports = function (app) {
         db.Employee.create(req.body).then(function (newEmployee) {
             console.log("employee has been added to the databse")
             aws2.create(newEmployee.id)
-            setTimeout(function () {
-                aws2.uploadphoto(newEmployee.id)
-            }, 1000)
             res.json(newEmployee)
         })
     })
@@ -161,5 +158,27 @@ module.exports = function (app) {
         req.logout();
         res.redirect("/");
     });
+
+    // creates new accounting item
+    app.post('/api/accounting', function (req, res) {
+        db.Budget.create(req.body).then(function (newItem) {
+            console.log("create budget item")
+            res.json(newItem)
+        })
+    })
+
+    // deletes a selected accounting item
+    app.delete('/api/accounting/:id', function (req, res) {
+        db.Budget.destroy({ where: { id: req.params.id } }).then(function (accountItem) {
+            res.json(accountItem)
+        })
+    })
+
+    // gets all accounting items 
+    app.get('/api/find/accounting', function (req, res) {
+        db.Budget.findAll({}).then(function (respItems) {
+            res.json(respItems)
+        })
+    })
 
 };

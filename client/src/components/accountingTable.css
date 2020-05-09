@@ -1,0 +1,63 @@
+
+
+.graphs{
+    color:black;
+    background-image:URL("/dust_scratches.png");
+    border-radius: 5px;
+}
+
+.new-item-accounting{
+    background-image:URL("/dust_scratches.png");
+    border-radius: 5px;
+}
+
+.graph-head{
+    margin-bottom:-30px;
+}
+
+.lbl-new-item{
+    color:black;
+}
+
+.lbl-sl-year{
+    color:black;
+}
+
+.img-account{
+    pointer-events: none;
+}
+
+.btn-show{
+    margin-right:120px;
+    border-radius: 5px;
+    outline:none !important;
+    margin-top:-45px !important;
+}
+
+.item-table{
+    width: 100%;
+}
+
+.head-month{
+    width: 100px;
+}
+
+.head-date{
+    width: 140px;
+}
+
+.head-amount{
+    width: 90px;
+}
+
+.head-type{
+    width: 220px;
+}
+
+.head-descr{
+    width: 350px;
+}
+
+.head-action{
+    width:100px;
+}

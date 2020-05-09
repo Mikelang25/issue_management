@@ -148,7 +148,7 @@ class employeeTable extends Component {
                         ))}
                     </div>
                     <div className="col-md-3 text-center">
-                        <button className="btn-crt-emp" onClick={this.showModal}>Create Employee</button>
+                        <button className="btn-crt-emp" onClick={this.showModal}><img className="img-new-emp" src="https://img.icons8.com/dusk/48/000000/new-contact.png"/></button>
                         <EmployeeStats 
                             employees={this.state.employees}
                         />

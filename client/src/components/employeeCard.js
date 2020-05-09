@@ -1,40 +1,57 @@
 import React from 'react';
+import './employeeCard.css'
 
 const styles = {
     card: {
         height: "200px",
         width: "400px",
-        border: "1pt solid black",
         display: "inline-block",
-        marginTop:"15px",
-        marginLeft:"15px",
-        marginRight: "15px",
+        marginTop: "15px",
+        marginLeft: "15px",
         position: "relative",
-        borderRadius:"10px",
-        backgroundColor:"white",
-        objectFit: "contain"
+        backgroundColor: "white",
+        objectFit: "contain",
+        backgroundImage:"URL('./dust_scratches.png')",
+        borderRadius:5
     },
     photo: {
         width: "110px",
-        height:"100px",
-        margin:20
+        height: "100px",
+        margin: 10,
+        borderRadius:5,
+        border: "2pt solid black"
     },
     button: {
         width: "20%",
-        marginRight: "15px"
-    },buttonContainer:{
-        position:"absolute",
-        bottom:"0",
-        right:"0",
-        width:"100%",
-        padding:"10px"
+        marginRight: "15px",
+        borderRadius:5,
+        backgroundColor:"grey",
+        paddingBottom:5,
+        outline:"none"
     },
-    photoContainer:{
-
+    buttonContainer: {
+        position: "absolute",
+        bottom: "0",
+        right: "0",
+        width: "100%",
+        padding: "10px",
+        textAlign:"center"
     },
-    infoContainer:{
-        padding:"10px",
-        fontSize:"80%"
+    photoContainer: {
+        
+    },
+    infoContainer: {
+        padding: "10px",
+        fontSize: "80%"
+    },
+    detailHeader: {
+        fontSize:10,
+        padding:0,
+        fontWeight:"bold"
+    },
+    detailContent:{
+        fontSize:12,
+        padding:0
     }
 };
 
@@ -43,20 +60,55 @@ const EmployeeCard = props => {
     return (
         <div style={styles.card}>
             <div className="row">
-                <div className="col-md-5 text-center">
-                    <img alt="" style={styles.photo} src={props.photo ? `https://issue-management-` + props.id + `.s3.amazonaws.com/` + props.photo : "./noimage.png"}/>
+                <div style={styles.photoContainer} className="col-md-3 text-center">
+                    <img alt="" style={styles.photo} src={props.photo ? `https://issue-management-` + props.id + `.s3.amazonaws.com/` + props.photo : "./noimage.png"} />
                 </div>
-                <div style={styles.infoContainer} className="col-md-7 text-left">
-                    <span>Name: {props.fname} {props.lname}</span><br></br>
-                    <span>Email: {props.email}</span><br></br>
-                    <span>Title: {props.title}</span><br></br> 
-                    <span>Salary: {props.salary}</span><br></br> 
-                    <span>Hire Date: {props.hdate}</span><br></br>                    
+                <div style={styles.infoContainer} className="col-md-9">
+                    <div className="row">
+                        <div className="col-md-4 text-right">
+                            <span style={styles.detailHeader}>Name:</span>
+                        </div>
+                        <div className="col-md-6 text-left">
+                            <span style={styles.detailContent}>{props.fname} {props.lname}</span>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-4 text-right">
+                            <span style={styles.detailHeader}>Email:</span>
+                        </div>
+                        <div className="col-md-6 text-left">
+                            <span style={styles.detailContent}>{props.email}</span>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-4 text-right">
+                            <span style={styles.detailHeader}>Title:</span>
+                        </div>
+                        <div className="col-md-6 text-left">
+                            <span style={styles.detailContent}>{props.title}</span>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-4 text-right">
+                            <span style={styles.detailHeader}>Salary:</span>
+                        </div>
+                        <div className="col-md-6 text-left">
+                            <span style={styles.detailContent}>{props.salary}</span>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-4 text-right">
+                        <span style={styles.detailHeader}>Hire Date:</span>
+                        </div>
+                        <div className="col-md-6 text-left">
+                        <span style={styles.detailContent}>{props.hdate}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div style={styles.buttonContainer}>
-                <button style={styles.button} value = {props.id} onClick={props.unHide}>Edit</button>
-                <button style={styles.button} value = {props.id} onClick={props.delete}>Delete</button>
+                <button style={styles.button} value={props.id} onClick={props.unHide}><img className="img-edit" src="https://img.icons8.com/cotton/18/000000/edit--v1.png"/></button>
+                <button style={styles.button} value={props.id} onClick={props.delete}><img className="img-delete" src="https://img.icons8.com/flat_round/18/000000/delete-sign.png"/></button>
             </div>
         </div>
     );

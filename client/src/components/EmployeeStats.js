@@ -77,7 +77,6 @@ class EmployeeStats extends Component {
         return (
             <div className="row">
                 <div style={styles.statsContainer} className="col-md-11 text-center">
-                    <h3 style={styles.statsHeader}>Employee Stats</h3>
                     <h6 style={styles.statsHeader}>Total Employees</h6>
                     <span>{this.props.employees.length}</span>
                     <h6 style={styles.statsHeader}>Total Salaries</h6>
@@ -92,10 +91,12 @@ class EmployeeStats extends Component {
 
 const styles = {
     statsContainer: {
-        border: "1pt solid black",
+        backgroundImage:"URL('./dust_scratches.png')",
         marginTop: 25,
         padding:15,
-        borderRadius:10
+        borderTopLeftRadius:10,
+        borderTopRightRadius:10,
+        paddingBottom:35
     },
     statsHeader:{
         marginTop:15

@@ -37,5 +37,14 @@ export default {
     },
     logoutUser: function (user) {
         return axios.get("/logout", user);
+    },
+    findAccounting: function () {
+        return axios.get("/api/find/accounting");
+    },
+    postAccounting: function (newItem) {
+        return axios.post("/api/accounting", newItem)
+    },
+    deleteAccounting: function (itemID) {
+        return axios.delete("/api/accounting/" + itemID)
     }
 };
