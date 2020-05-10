@@ -12,7 +12,8 @@ function PageHeader() {
 const styles = {
     headMain:{
         marginTop:"10px",
-        marginLeft:"15px"
+        marginLeft:"15px",
+        fontFamily: "'Mitr', sans-serif"
     },    
     headerContainer:{
         backgroundImage:"URL('./rubber_grip.png')",

@@ -46,14 +46,16 @@ const styles = {
         fontSize: "80%"
     },
     detailHeader: {
-        fontSize:10,
+        fontSize:14,
         padding:0,
-        fontWeight:"bold"
+        fontWeight:"bold",
+        fontFamily: "'Markazi Text', serif"
     },
     detailContent:{
-        fontSize:12,
+        fontSize:14,
         padding:0,
-        marginLeft:"-25px"
+        marginLeft:"-25px",
+        fontFamily: "'Frank Ruhl Libre', serif"
     }
 };
 

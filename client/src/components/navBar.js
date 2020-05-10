@@ -39,7 +39,8 @@ const styles = {
         background: "rgba(61, 59, 59, 0.4)",
         color:"white",
         outline:"none",
-        border:"1pt solid white"
+        border:"1pt solid white",
+        fontFamily: "'Mitr', sans-serif"
     }
 }
 

@@ -100,11 +100,14 @@ const styles = {
     },
     statsHeader:{
         marginTop:15,
-        fontWeight:"bolder"
+        fontWeight:"bolder",
+        fontFamily: "'Markazi Text', serif",
+        fontSize:24
     },
     statsContent:{
         color:"white",
-        fontWeight:"bolder"
+        fontWeight:"bolder",
+        fontFamily: "'Frank Ruhl Libre', serif"
     }
 }
 

@@ -13,6 +13,7 @@
 .link-container {
     background-Image:URL("/rubber_grip.png");
     padding:5px;
+    font-family: 'Mitr', sans-serif;
 }
 
 .btn-signout:hover{

@@ -227,7 +227,7 @@ class IssueTable extends Component {
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody className="table-body">
                                     {this.state.employeeIssues.map(issue => (
                                         <tr key={issue.id}>
                                             <td>{issue.issueTitle}</td>

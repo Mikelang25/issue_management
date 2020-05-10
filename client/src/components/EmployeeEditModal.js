@@ -107,7 +107,7 @@ class employeeEditModal extends Component {
                 centered
             >
                 <Modal.Header style={styles.modalHead}>
-                    <Modal.Title>
+                    <Modal.Title style={styles.modalTitle}>
                         <h2><img alt="" src="https://img.icons8.com/color/48/000000/men-age-group-5.png" />Update Employee</h2>
                     </Modal.Title>
                 </Modal.Header>
@@ -158,14 +158,15 @@ const styles = {
       fontWeight: "bold",
       marginBottom: "15px",
       color: "black",
-      fontFamily: "'Playfair Display SC', serif"
+      fontFamily: "'Markazi Text', serif",
+      fontSize:18
     },
     inputs: {
       marginBottom: "20px",
       width: "100%",
       borderRadius: "10px",
       paddingLeft: "10px",
-      fontFamily: "'Gotu', sans-serif",
+      fontFamily: "'Frank Ruhl Libre', serif",
       outline: "none"
     },
     descr:{
@@ -174,7 +175,7 @@ const styles = {
       height:"120px",
       borderRadius: "10px",
       paddingLeft: "10px",
-      fontFamily: "'Gotu', sans-serif"
+      fontFamily: "'Frank Ruhl Libre', serif",
     },
     buttonSub: {
       marginTop: "30px",
@@ -182,7 +183,7 @@ const styles = {
       width: "15%",
       color: "white",
       borderRadius: "5px",
-      fontFamily: "'Playfair Display SC', serif",
+      fontFamily: "'Mitr', sans-serif",
       backgroundColor:"black",
       outline:"none"
     },
@@ -191,15 +192,15 @@ const styles = {
     },
     modalHead: {
       color: "white",
-      backgroundColor:"black"
+      backgroundColor:"black",
+      fontFamily: "'Mitr', sans-serif"
     },
     modalFooter: {
       backgroundColor: "black"
     },
     modalTitle: {
       border: "1 solid black",
-      fontFamily: "'Playfair Display SC', serif",
-      color: "black"
+      fontFamily: "'Mitr', sans-serif"
     },
     image:{
       marginRight:"10px"

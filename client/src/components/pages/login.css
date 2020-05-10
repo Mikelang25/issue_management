@@ -15,11 +15,15 @@ body{
     margin-top:30px;
     font-weight: bold;
     margin-bottom:20px;
+    font-family: 'Markazi Text', serif;
+    font-size: 16pt;
 }
 
 .lbl-login{
     margin-top:10px;
     text-align: center;
+    font-family: 'Markazi Text', serif;
+    font-size: 40pt;
 }
 
 .inp-un{
@@ -29,12 +33,15 @@ body{
     width: 95%;
     text-indent: 3px;
     font-size: 9;
+    font-family: 'Frank Ruhl Libre', serif;
     outline: none;
 }
 
 .lbl-pw{
     font-weight: bold;
     margin-bottom:20px;
+    font-family: 'Markazi Text', serif;
+    font-size: 16pt;
 }
 
 .inp-pw{
@@ -44,6 +51,7 @@ body{
     width: 95%;
     text-indent: 5px;
     outline: none;
+    font-family: 'Frank Ruhl Libre', serif;
 }
 
 .btn-login{
@@ -53,6 +61,8 @@ body{
     background-image: URL("/rubber_grip.png");
     color:whitesmoke;
     border-radius: 5px;
+    font-family: 'Markazi Text', serif;
+    font-size: 14pt;
 }
 
 .btn-login:hover{
@@ -68,6 +78,8 @@ body{
     background-image: URL("/rubber_grip.png");
     color:whitesmoke;
     border-radius: 5px;
+    font-family: 'Markazi Text', serif;
+    font-size: 14pt;
 }
 
 .btn-sign:hover{
@@ -79,5 +91,6 @@ body{
 .lbl-cont{
     font-size: 10pt;
     margin-bottom:20px;
+    font-family: 'Frank Ruhl Libre', serif;
 }
 

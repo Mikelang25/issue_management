@@ -72,17 +72,21 @@ const styles = {
     },
     statsHeader: {
         marginTop: 15,
-        fontWeight:"bolder"
+        fontSize:24,
+        fontWeight:"bolder",
+        fontFamily: "'Markazi Text', serif",
     },
     offenderContainer:{
         marginTop:20,
         fontWeight:"bolder",
         color:"white",
-        fontSize:14
+        fontSize:14,
+        fontFamily: "'Frank Ruhl Libre', serif"
     },
     isseTotal:{
         fontSize:18,
-        color:"white"
+        color:"white",
+        fontFamily: "'Frank Ruhl Libre', serif"
     }
 }
 

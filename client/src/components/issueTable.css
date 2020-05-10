@@ -10,10 +10,17 @@ body{
 .lbl-employee{
     font-weight: bold;
     margin-right: 10px;
+    font-family: 'Mitr', sans-serif;
 }
 
 .table-headers{
     text-align: center;
+    font-family: 'Markazi Text', serif;
+    font-size: 16pt;
+}
+
+.table-body{
+    font-family: 'Frank Ruhl Libre', serif;
 }
 
 .table-date{
@@ -43,6 +50,8 @@ body{
 .emp-dropdown{
     margin-bottom:30px;
     text-indent: 10px;
+    width: 200px;
+    font-family: 'Frank Ruhl Libre', serif;
 }
 
 .btn-delete{
