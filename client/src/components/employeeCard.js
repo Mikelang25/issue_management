@@ -3,7 +3,7 @@ import './employeeCard.css'
 
 const styles = {
     card: {
-        height: "200px",
+        height: "175px",
         width: "400px",
         display: "inline-block",
         marginTop: "15px",
@@ -12,14 +12,15 @@ const styles = {
         backgroundColor: "white",
         objectFit: "contain",
         backgroundImage:"URL('./dust_scratches.png')",
-        borderRadius:5
+        borderRadius:5,
+        boxShadow: "3px 5px",
+        border:"1pt solid black"
     },
     photo: {
         width: "110px",
         height: "100px",
         margin: 10,
-        borderRadius:5,
-        border: "2pt solid black"
+        borderRadius:5
     },
     button: {
         width: "20%",
@@ -51,7 +52,8 @@ const styles = {
     },
     detailContent:{
         fontSize:12,
-        padding:0
+        padding:0,
+        marginLeft:"-25px"
     }
 };
 

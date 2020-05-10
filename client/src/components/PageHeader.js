@@ -15,12 +15,13 @@ const styles = {
         marginLeft:"15px"
     },    
     headerContainer:{
-        backgroundColor:"black",
+        backgroundImage:"URL('./rubber_grip.png')",
         color:"white",
-        height:"75px"
+        height:"100px"
     },
     image:{
-        marginRight:"10px"
+        marginRight:"10px",
+        marginBottom:"5px"
     }
 }
 

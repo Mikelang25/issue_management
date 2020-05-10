@@ -117,7 +117,7 @@ class Login extends Component {
                     <div className="col-md-4"></div>
                     <div className="col-md-4">
                         <form className="login-form">
-                            <h1 className="lbl-login"><img src="https://img.icons8.com/color/48/000000/men-age-group-5.png"/>LOGIN</h1>
+                            <h1 className="lbl-login"><img src="https://img.icons8.com/plasticine/48/000000/gender-neutral-employee-group.png"/>LOGIN</h1>
                             <label className="lbl-user">Email</label><br></br>
                             <input className="inp-un" type="text" name="email" value={this.state.email} onChange={this.handleInputChange}></input><br></br>
                             <label className="lbl-pw">Password</label><br></br>

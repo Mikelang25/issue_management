@@ -107,8 +107,8 @@ class employeeEditModal extends Component {
                 centered
             >
                 <Modal.Header style={styles.modalHead}>
-                    <Modal.Title id="contained-modal-title-vcenter">
-                        <h2 style={styles.modalTitle}><img alt="" src="https://img.icons8.com/color/48/000000/men-age-group-5.png" />Update Employee</h2>
+                    <Modal.Title>
+                        <h2><img alt="" src="https://img.icons8.com/color/48/000000/men-age-group-5.png" />Update Employee</h2>
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body style={styles.modal}>
@@ -138,8 +138,8 @@ class employeeEditModal extends Component {
                             </div>
                             <div className="row">
                                 <div className="col-md-12 text-center">
-                                    <button style={styles.button} onClick={this.updateEmployeeHandler}>Update</button>
-                                    <button style={styles.button} onClick={this.props.onHide}>Close</button>
+                                    <button style={styles.buttonSub} onClick={this.updateEmployeeHandler}>Update</button>
+                                    <button style={styles.buttonSub} onClick={this.props.onHide}>Close</button>
                                 </div>
                             </div>
                         </form>
@@ -154,19 +154,57 @@ class employeeEditModal extends Component {
 }
 
 const styles = {
-    button: {
-        marginTop: 20,
-        marginRight: 30,
-        width: "20%"
-    },
     labels: {
-        marginTop: 10,
-        fontWeight: "bold"
+      fontWeight: "bold",
+      marginBottom: "15px",
+      color: "black",
+      fontFamily: "'Playfair Display SC', serif"
     },
     inputs: {
-        width: "80%"
+      marginBottom: "20px",
+      width: "100%",
+      borderRadius: "10px",
+      paddingLeft: "10px",
+      fontFamily: "'Gotu', sans-serif",
+      outline: "none"
+    },
+    descr:{
+      marginBottom: "20px",
+      width: "100%",
+      height:"120px",
+      borderRadius: "10px",
+      paddingLeft: "10px",
+      fontFamily: "'Gotu', sans-serif"
+    },
+    buttonSub: {
+      marginTop: "30px",
+      marginRight: "30px",
+      width: "15%",
+      color: "white",
+      borderRadius: "5px",
+      fontFamily: "'Playfair Display SC', serif",
+      backgroundColor:"black",
+      outline:"none"
+    },
+    modal: {
+      backgroundImage: "URL('./dust_scratches.png')"
+    },
+    modalHead: {
+      color: "white",
+      backgroundColor:"black"
+    },
+    modalFooter: {
+      backgroundColor: "black"
+    },
+    modalTitle: {
+      border: "1 solid black",
+      fontFamily: "'Playfair Display SC', serif",
+      color: "black"
+    },
+    image:{
+      marginRight:"10px"
     }
-}
+  }
 
 
 export default employeeEditModal;

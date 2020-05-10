@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 class EmployeeStats extends Component {
 
     state = {
@@ -76,13 +77,13 @@ class EmployeeStats extends Component {
 
         return (
             <div className="row">
-                <div style={styles.statsContainer} className="col-md-11 text-center">
-                    <h6 style={styles.statsHeader}>Total Employees</h6>
-                    <span>{this.props.employees.length}</span>
+                <div style={styles.statsContainer} className="col-md-11 text-center card-container">
                     <h6 style={styles.statsHeader}>Total Salaries</h6>
-                    <span>{this.state.totalSalary}</span>
+                    <span style={styles.statsContent}>{this.state.totalSalary}</span>
                     <h6 style={styles.statsHeader}>Average Tenure</h6>
-                    <span>{this.state.averageTenure} years</span>
+                    <span style={styles.statsContent}>{this.state.averageTenure} years</span>
+                    <h6 style={styles.statsHeader}>Total Employees</h6>
+                    <span style={styles.statsContent}>{this.props.employees.length}</span>
                 </div>
             </div>
         );
@@ -91,15 +92,19 @@ class EmployeeStats extends Component {
 
 const styles = {
     statsContainer: {
-        backgroundImage:"URL('./dust_scratches.png')",
+        background: "rgba(61, 59, 59, 0.4)",
         marginTop: 25,
         padding:15,
-        borderTopLeftRadius:10,
-        borderTopRightRadius:10,
+        borderRadius:5,
         paddingBottom:35
     },
     statsHeader:{
-        marginTop:15
+        marginTop:15,
+        fontWeight:"bolder"
+    },
+    statsContent:{
+        color:"white",
+        fontWeight:"bolder"
     }
 }
 

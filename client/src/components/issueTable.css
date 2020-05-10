@@ -7,6 +7,11 @@ body{
     padding-top:30px;
 }
 
+.lbl-employee{
+    font-weight: bold;
+    margin-right: 10px;
+}
+
 .table-headers{
     text-align: center;
 }

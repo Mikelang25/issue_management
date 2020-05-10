@@ -27,7 +27,9 @@ body{
     border:none;
     border-bottom: 1pt solid black;
     width: 95%;
-    text-indent: 5px;
+    text-indent: 3px;
+    font-size: 9;
+    outline: none;
 }
 
 .lbl-pw{
@@ -41,13 +43,14 @@ body{
     border-bottom: 1pt solid black;
     width: 95%;
     text-indent: 5px;
+    outline: none;
 }
 
 .btn-login{
     width:95%;
     margin-bottom:130px;
     border:1pt solid black;
-    background-color: rgb(89, 89, 189);
+    background-image: URL("/rubber_grip.png");
     color:whitesmoke;
     border-radius: 5px;
 }
@@ -62,7 +65,7 @@ body{
     margin-top:50px;
     width:50%;
     border:1pt solid black;
-    background-color: rgb(89, 89, 189);
+    background-image: URL("/rubber_grip.png");
     color:whitesmoke;
     border-radius: 5px;
 }

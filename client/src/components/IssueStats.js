@@ -43,8 +43,8 @@ class IssueStats extends Component {
             <div className="row">
                 <div style={styles.statsContainer} className="col-md-11 text-center">
                     <h6 style={styles.statsHeader}>Total Issues</h6>
-                    <span>{this.props.issues.length}</span>
-                    <h6>Top Three Offenders</h6>
+                    <span style={styles.isseTotal}>{this.props.issues.length}</span>
+                    <h6 style={styles.statsHeader}>Top Three Offenders</h6>
                     {this.state.issueTotals.map(total => (
                         <div style={styles.offenderContainer} className="row" key={total.employees}>
                             <div className="col-md-3"></div>
@@ -64,17 +64,25 @@ class IssueStats extends Component {
 
 const styles = {
     statsContainer: {
-        backgroundImage:"URL('./dust_scratches.png')",
+        background: "rgba(61, 59, 59, 0.4)",
         marginTop: 25,
         padding: 15,
         borderRadius:10,
         paddingBottom:35
     },
     statsHeader: {
-        marginTop: 15
+        marginTop: 15,
+        fontWeight:"bolder"
     },
     offenderContainer:{
-        marginTop:20
+        marginTop:20,
+        fontWeight:"bolder",
+        color:"white",
+        fontSize:14
+    },
+    isseTotal:{
+        fontSize:18,
+        color:"white"
     }
 }
 

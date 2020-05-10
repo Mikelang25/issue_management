@@ -11,6 +11,11 @@
 }
 
 .link-container {
-    background-color: black;
-    padding:10px;
+    background-Image:URL("/rubber_grip.png");
+    padding:5px;
+}
+
+.btn-signout:hover{
+    background: rgba(65, 18, 18, 0.4) !important;
+    color: black !important;
 }

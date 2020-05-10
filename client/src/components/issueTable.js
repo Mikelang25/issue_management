@@ -142,7 +142,7 @@ class IssueTable extends Component {
                         employeeIssues: selectUpdateIssues
                     })
                 }
-
+                this.findIssues();
                 this.hideModal();
             })
     }
@@ -192,6 +192,7 @@ class IssueTable extends Component {
                 onChange={this.handleInputChange}
                 setDoc={this.setDocHandler}
                 submit={this.submitIssueHandler}
+                employee={this.state.employeeIssue}
             />
         );
     }
@@ -202,6 +203,7 @@ class IssueTable extends Component {
                 <div className="row">
                     <div className="col-md-9 main-container">
                         <div className="row">
+                            <span className="lbl-employee">Employee</span>
                             <select className="emp-dropdown" name="employeeIssue" onChange={this.selectEmployeeIssues}>
                                 {this.state.employees.map(employee => (
                                     <EmployeeDropItem

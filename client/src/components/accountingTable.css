@@ -1,9 +1,13 @@
 
+.dropdown-year{
+    text-indent: 20px;
+}
 
 .graphs{
     color:black;
-    background-image:URL("/dust_scratches.png");
+    background: rgba(61, 59, 59, 0.4);
     border-radius: 5px;
+    border: none;
 }
 
 .new-item-accounting{
@@ -13,6 +17,7 @@
 
 .graph-head{
     margin-bottom:-30px;
+    font-weight: bolder;
 }
 
 .lbl-new-item{
@@ -32,6 +37,10 @@
     border-radius: 5px;
     outline:none !important;
     margin-top:-45px !important;
+}
+
+.btn-show:hover{
+    background-color: black;
 }
 
 .item-table{
