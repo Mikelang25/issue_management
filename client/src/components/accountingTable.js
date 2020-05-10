@@ -306,7 +306,7 @@ class accountingTable extends Component {
                                                 colorScale={["tomato", "orange", "red", "grey", "navy"]}
                                                 style={{
                                                     labels: {
-                                                        fontSize: 10, fill: "black"
+                                                        fontSize: 8, fill: "black"
                                                     }
                                                 }}
 
@@ -325,7 +325,7 @@ class accountingTable extends Component {
                                                 colorScale={["purple", "yellow", "red", "black", "navy"]}
                                                 style={{
                                                     labels: {
-                                                        fontSize: 10, fill: "black"
+                                                        fontSize: 8, fill: "black"
                                                     }
                                                 }}
                                             />

@@ -22,7 +22,7 @@ class EmployeeStats extends Component {
         for (var e = 0; e < this.props.employees.length; e++) {
 
             let date1 = this.props.employees[e].hireDate
-            let date2 = '2018-01-01';
+            let date2 = '2020-05-01';
 
             date1 = date1.split('-');
             date2 = date2.split('-');

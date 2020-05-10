@@ -34,7 +34,7 @@ class NavTab extends Component {
 
 const styles = {
     buttonSignout:{
-        marginRight:"10px",
+        marginRight:"30px",
         borderRadius:5,
         background: "rgba(61, 59, 59, 0.4)",
         color:"white",
