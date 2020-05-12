@@ -94,9 +94,10 @@ module.exports = function (app) {
                 var mailOptions = {
                     from: 'dax.schneider54@ethereal.email',
                     to: employee.email,
-                    subject: "An Issue has been created for you",
-                    text: "Issue Description: ",
-                    html: "<p>This is to let you know that an issue has been raised regarding your conduct."
+                    subject: "An Issue has been created for you - " + newIssue.issueTitle,
+                    html: "<p>This is to let you know that an issue has been raised regarding your conduct.<p><br>" + 
+                            newIssue.incidentDate + "<br><br>" + 
+                            newIssue.issueDescr + "<br>"
                 };
 
                 transporter.sendMail(mailOptions, function (error, info) {
